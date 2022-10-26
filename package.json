@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "build": "cd src/frontend && npm run build",
+    "dev": "cd src/frontend && npm run dev"
+  },
+  "devDependencies": {
+    "@dfinity/agent": "^0.13.2",
+    "@dfinity/auth-client": "^0.13.2",
+    "@sveltejs/vite-plugin-svelte": "^1.0.2",
+    "@tsconfig/svelte": "^3.0.0",
+    "@types/babel__core": "^7.1.19",
+    "@types/node": "^18.7.13",
+    "autoprefixer": "^10.4.7",
+    "buffer": "^6.0.3",
+    "postcss": "^8.4.14",
+    "postcss-load-config": "^4.0.1",
+    "svelte": "^3.49.0",
+    "svelte-check": "^2.8.0",
+    "svelte-preprocess": "^4.10.7",
+    "tailwindcss": "^3.1.5",
+    "tslib": "^2.4.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7"
+  }
+}

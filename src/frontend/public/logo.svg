@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <ellipse style="stroke: rgb(0, 0, 0); stroke-width: 10px; fill: rgb(248, 250, 252); paint-order: fill;" cx="250" cy="250" rx="245" ry="245"/>
+  <text style="font-family: Harrington; font-size: 334px; font-weight: 700; white-space: pre;" transform="matrix(1, 0, 0, 1, -16.769318, 231.748896)" bx:origin="0.515 0.542"><tspan x="143.988" y="137.629">H</tspan><tspan x="143.988" dy="1em">​</tspan></text>
+</svg>

@@ -1,0 +1,85 @@
+type Username = text;
+type UserDashboardResult = 
+ variant {
+   err: UserDashboardError;
+   ok: UserDashboard;
+ };
+type UserDashboardError = 
+ variant {
+   UnknownError;
+   UnknownPrincipal;
+ };
+type UserDashboard = 
+ record {
+   activity: float64;
+   created: Time;
+   "principal": principal;
+   status: text;
+   totalTime: nat;
+   username: text;
+ };
+type Time = int;
+type TestResult = 
+ variant {
+   err: text;
+   ok;
+ };
+type StartHarResult = 
+ variant {
+   err: StartHarError;
+   ok: Time;
+ };
+type StartHarError = 
+ variant {
+   HarNotDone: Time;
+   OtherError;
+   UnknownHarIndex;
+   UnknownPrincipal;
+ };
+type NewUserResult = 
+ variant {
+   err: NewUserError;
+   ok: Username;
+ };
+type NewUserError = 
+ variant {
+   PrincipalAlreadyExists;
+   UsernameAlreadyExists;
+   UsernameNotAllowed;
+ };
+type HarStatus = 
+ record {
+   done: bool;
+   name: text;
+   time: Time;
+ };
+type HarCheck = vec HarStatus;
+type GlobalStats = 
+ record {
+   totalTime: nat;
+   users: nat;
+ };
+type CheckHarResult = 
+ variant {
+   err: CheckHarError;
+   ok: HarCheck;
+ };
+type CheckHarError = variant {NoHarHistory;};
+type AdminUser = 
+ record {
+   created: Time;
+   status: text;
+   username: Username;
+ };
+service : {
+  _testDataStoreLengths: () -> (TestResult) query;
+  _testNewUser: () -> (TestResult) query;
+  checkHars: () -> (CheckHarResult) query;
+  checkUsername: (Username) -> (text) query;
+  globalStats: () -> (GlobalStats) query;
+  isRegistered: () -> (bool) query;
+  listUsers: () -> (vec AdminUser) query;
+  newUser: (Username) -> (NewUserResult);
+  startHar: (nat) -> (StartHarResult);
+  userDashboard: () -> (UserDashboardResult) query;
+}
