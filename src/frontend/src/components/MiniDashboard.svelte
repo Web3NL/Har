@@ -18,7 +18,7 @@ onMount(
 </div>
 <div class="text-center px-10 py-5">
     <span class="text-2xl font-semibold">
-        {activity}
+        Activity: {activity}
     </span>
     <span>%</span>
 </div>
